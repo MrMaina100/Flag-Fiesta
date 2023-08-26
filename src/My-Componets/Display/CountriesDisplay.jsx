@@ -1,6 +1,7 @@
 import { useEffect, useContext, useState} from "react"
 import CountriesContext from "../../Context/CountriesContext"
 
+
 const CountriesDisplay = () => {
 
   const [search, setSearch] = useState('')
@@ -12,24 +13,28 @@ const CountriesDisplay = () => {
    },[])
   return (
     <> 
-     <div className="flex justify-between items-center">
-       <input type="text" onChange={(e)=>setSearch(e.target.value)} className="text-black"  />
+     <div className="mt-2 flex justify-between items-center px-2 md:px-[100px]">
+       <input type="text" onChange={(e)=>setSearch(e.target.value)} className="text-black border-2 border-black p-1" placeholder="search for a country"  />
 
-       <select onChange={(e)=>setSelectRegion(e.target.value)}>
-        <option value=''>All</option>
+
+         <select onChange={(e)=>setSelectRegion(e.target.value)} className="bg-black text-white p-2">
+          
+
+           <option value=''>All</option>
             <option value="Africa">Africa</option>
             <option value="America">America</option>
             <option value="Asia">Asia</option>
             <option value="Europe">Europe</option>
-            <option value="Oceania">Oceania</option>
-       </select>
-
+            <option value="Oceania">Oceania</option>       
+         
+        </select>
+    
      </div>
 
      
 
 
-      <div className=" pt-3 flex flex-col items-center justify-center space-y-8 md:flex-row md:space-y-8 md:space-x-10  md:flex-wrap"> 
+      <div className="  flex flex-col items-center justify-center space-y-8 md:flex-row md:space-y-8 md:space-x-10  md:flex-wrap"> 
        <br />
        
         {countries.filter((results)=>{
